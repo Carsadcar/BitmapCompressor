@@ -92,7 +92,7 @@ QModelIndex FilesModel::getModelIndexByFile(const QString &path)
 
 void FilesModel::updateListFiles()
 {
-    QDir dir(directory, "*.bmp *.barch *.png", QDir::Name, QDir::Files);
+    QDir dir(directory, "*.bmp *.barch *.png", QDir::Name | QDir::Type, QDir::Files);
 
     auto list = dir.entryInfoList();
 

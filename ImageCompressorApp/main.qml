@@ -41,13 +41,11 @@ Window {
                     Text{
                         clip : true
                         text : status
-                        Layout.fillWidth: true
                     }
 
                     Text{
                         clip : true
                         text : size
-                        Layout.fillWidth: true
                     }
                 }
 
