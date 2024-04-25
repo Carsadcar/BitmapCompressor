@@ -20,6 +20,36 @@ Window {
             id : listView
             Layout.fillWidth: true
             Layout.fillHeight: true
+            header:
+                Rectangle{
+                    height: 50
+                    radius: 10
+                    color : "gray"
+                    border.color: "cyan"
+                    width: parent.width
+                    RowLayout{
+                        anchors.fill: parent
+                        anchors.margins: 20
+
+                        Text{
+                            wrapMode: Text.WrapAnywhere
+                            text : "filename"
+                            Layout.preferredWidth: listView.width * (4/6)
+                        }
+
+                        Text{
+                            wrapMode: Text.WrapAnywhere
+                            text : "status"
+                            Layout.preferredWidth: listView.width * (1/6)
+
+                        }
+                        Text{
+                            wrapMode: Text.WrapAnywhere
+                            text : "size"
+                            Layout.preferredWidth: listView.width * (1/6)
+                        }
+                    }
+                }
 
             model : fileModel
             delegate: Rectangle {
@@ -33,19 +63,21 @@ Window {
                     anchors.margins: 20
 
                     Text{
-                        clip : true
+                        wrapMode: Text.WrapAnywhere
                         text : filename
-                        Layout.fillWidth: true
+                        Layout.preferredWidth: listView.width * (4/6)
                     }
 
                     Text{
-                        clip : true
+                        wrapMode: Text.WrapAnywhere
                         text : status
-                    }
+                        Layout.preferredWidth: listView.width * (1/6)
 
+                    }
                     Text{
-                        clip : true
+                        wrapMode: Text.WrapAnywhere
                         text : size
+                        Layout.preferredWidth: listView.width * (1/6)
                     }
                 }
 
