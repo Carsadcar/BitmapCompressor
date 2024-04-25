@@ -216,11 +216,11 @@ ImageCompressor::CompressedImage ImageCompressor::compressImage(const RawImageDa
     {
         if(isEmptyRaw(data.data + raw * data.width, data.data + (raw + 1) * data.width))
         {
-            indexes.push_back(0);
+            indexes.push_back(1);
         }
         else
         {
-            indexes.push_back(1);
+            indexes.push_back(0);
             int samePixelsInRaw = 0;
             int startPixelIndex = raw * data.width;
             unsigned char startPixelData = data.data[startPixelIndex];
@@ -298,7 +298,7 @@ ImageCompressor::RawImageData ImageCompressor::decompressImage(const CompressedI
 
     for(auto index : data.compressedIndexes)
     {
-        if(index == 0)
+        if(index == 1)
         {
             decompressedData.insert(decompressedData.end(), data.width, static_cast<BYTE>(PixelColor::WHITE));
             decompressedBytes += data.width;
