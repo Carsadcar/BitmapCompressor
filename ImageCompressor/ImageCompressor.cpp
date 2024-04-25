@@ -6,8 +6,8 @@ namespace
 {
 enum class PixelColor
 {
-    WHITE = 0x00,
-    BLACK = 0xff
+    WHITE = 0xff,
+    BLACK = 0x00
 };
 
 enum class DataIdentifiers
